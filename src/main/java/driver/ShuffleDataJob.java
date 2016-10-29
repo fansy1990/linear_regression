@@ -42,7 +42,7 @@ public class ShuffleDataJob extends Configured implements Tool
         }
         conf.setInt(Utils.SHUFFLE_RANDN, randN);
 
-        Job job = Job.getInstance(conf);
+        Job job = Job.getInstance(conf,"Shuffle Data Job");
         job.setJarByClass(ShuffleDataJob.class);
 
         job.setMapperClass(ShuffleMapper.class);

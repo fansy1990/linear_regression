@@ -34,7 +34,7 @@ public class LinearRegressionJob extends Configured implements Tool
             System.exit(-1);
         }
         Configuration conf = getConf();
-        conf.setLong("mapreduce.input.fileinputformat.split.maxsize",700L);
+        conf.setLong("mapreduce.input.fileinputformat.split.maxsize",700L);// 获取多个mapper；
         String[] args2 = args[2].split(";");
         float theta0 = 1.0f;
         float theta1 = 0.0f;
@@ -51,7 +51,7 @@ public class LinearRegressionJob extends Configured implements Tool
         conf.setFloat(Utils.LINEAR_ALPHA, alpha);
         conf.set(Utils.LINEAR_SPLITTER,args[3]);
 
-        Job job = Job.getInstance(conf);
+        Job job = Job.getInstance(conf,"Linear Regression Job");
 
         job.setMapperClass(LinearRegressionMapper.class);
 //        job.setReducerClass(LinearRegressionReducer.class);// 不使用mapper即可

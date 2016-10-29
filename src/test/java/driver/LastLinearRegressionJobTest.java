@@ -17,6 +17,5 @@ public class LastLinearRegressionJobTest {
                 ",",
         }    ;
         ToolRunner.run(Utils.getConf(),new LastLinearRegressionError(),args);
-
     }
 }

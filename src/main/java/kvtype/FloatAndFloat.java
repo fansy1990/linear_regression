@@ -1,6 +1,7 @@
 package kvtype;
 
 import org.apache.hadoop.io.Writable;
+import org.apache.hadoop.io.WritableComparable;
 
 import java.io.DataInput;
 import java.io.DataOutput;
@@ -9,7 +10,7 @@ import java.io.IOException;
 /**
  * Created by fanzhe on 2016/10/23.
  */
-public class FloatAndFloat implements Writable {
+public class FloatAndFloat implements WritableComparable<FloatAndFloat> {
 
     private float theta0 ;
     private float theta1;
@@ -55,5 +56,15 @@ public class FloatAndFloat implements Writable {
     @Override
     public String toString() {
         return this.theta0 +","+ this.theta1;
+    }
+
+    @Override
+    public int compareTo(FloatAndFloat o) {
+        if(this.getTheta0() == o.getTheta0()){
+            if(this.getTheta1() <o.getTheta1()) return -1;
+            return 1;
+        }else if(this.getTheta0()< o.getTheta0()) return -1;
+
+        return 1;
     }
 }

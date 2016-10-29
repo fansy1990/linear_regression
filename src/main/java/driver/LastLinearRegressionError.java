@@ -39,7 +39,7 @@ public class LastLinearRegressionError extends Configured implements Tool
         conf.set(Utils.SINGLE_LINEAR_PATH,args[2]);
         conf.set(Utils.LINEAR_SPLITTER,args[3]);
 
-        Job job = Job.getInstance(conf);
+        Job job = Job.getInstance(conf,"Last Linear Regression Error");
 
         job.setMapperClass(SingleLinearRegressionErrorMapper.class);
         job.setReducerClass(SingleLinearRegressionErrorReducer2.class);//

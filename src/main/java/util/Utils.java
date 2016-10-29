@@ -23,7 +23,7 @@ public class Utils {
 
     public static final String SINGLE_LINEAR_PATH ="single.regression.path";
 
-    public static final String MAPPER_OUTPUT_PREFIX = "part-m";
+    public static final String MAPPER_OUTPUT_PREFIX = "part-";
 
     public static final String SINGLE_REDUCER_METHOD="single.reducer.method" ;
 

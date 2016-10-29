@@ -15,9 +15,8 @@ public class SingleLinearRegressionJobTest {
                 "hdfs://master:8020/user/fanzhe/single_linear_regression_error",
                 "hdfs://master:8020/user/fanzhe/linear_regression",
                 ",",
-                "weight"
+                "average"
         }    ;
         ToolRunner.run(Utils.getConf(),new SingleLinearRegressionError(),args);
-
     }
 }

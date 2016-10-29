@@ -42,7 +42,7 @@ public class SingleLinearRegressionError extends Configured implements Tool
         conf.set(Utils.LINEAR_SPLITTER,args[3]);
 
         conf.set(Utils.SINGLE_REDUCER_METHOD,args[4]);
-        Job job = Job.getInstance(conf);
+        Job job = Job.getInstance(conf,"Single Linear Regression Error");
 
         job.setMapperClass(SingleLinearRegressionErrorMapper.class);
         job.setReducerClass(SingleLinearRegressionErrorReducer.class);//

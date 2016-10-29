@@ -41,10 +41,10 @@ public class SingleLinearRegressionErrorReducer extends Reducer<FloatAndFloat,Fl
         // 如何加权？
         // 方式1：如果误差越小，那么说明权重应该越大；
         // 方式2：直接平均值
-        float [] theta_all = null;
+        float [] theta_all = new float[2];
         if("average".equals(method)){
-            theta_all = theta_error.get(0);
-            for(int i=1;i< theta_error.size();i++){
+//            theta_all = theta_error.get(0);
+            for(int i=0;i< theta_error.size();i++){
                 theta_all[0] += theta_error.get(i)[0];
                 theta_all[1] += theta_error.get(i)[1];
             }
@@ -55,7 +55,6 @@ public class SingleLinearRegressionErrorReducer extends Reducer<FloatAndFloat,Fl
             for(float[] d:theta_error){
                 sumErrors += 1/d[2];
             }
-
             for(float[] d: theta_error){
                 theta_all[0] += d[0] * 1/d[2] /sumErrors;
                 theta_all[1] += d[1] * 1/d[2] /sumErrors;

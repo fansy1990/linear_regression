@@ -9,14 +9,13 @@ import util.Utils;
 public class LinearRegressionJobTest {
 
     public static void main(String[] args) throws Exception {
-//        <input> <output> <theta0;theta1;alpha> <splitter>
+//        <input> <output> <theta0;theta1;alpha> <splitter> // 注意第三个参数使用分号分割
         args = new String[]{
                 "hdfs://master:8020/user/fanzhe/shuffle_out",
                 "hdfs://master:8020/user/fanzhe/linear_regression",
-                "1,0,0.01",
+                "1;0;0.01",
                 ","
         }    ;
         ToolRunner.run(Utils.getConf(),new LinearRegressionJob(),args);
-
     }
 }
